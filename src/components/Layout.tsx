@@ -3,7 +3,7 @@ import { LayoutProps } from "@pankod/refine-core";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const value = useSelector(state => state.cartSlice.value);
+  const value = useSelector(state => state.cartSlice.user);
   console.log(value);
 
   return (

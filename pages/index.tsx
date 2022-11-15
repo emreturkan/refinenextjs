@@ -1,26 +1,22 @@
 import { GetServerSideProps } from "next";
-import dataProvider from "@pankod/refine-simple-rest";
 import { GetListResponse, LayoutWrapper, useTable } from "@pankod/refine-core";
 import ProductCards from "@components/ProductCards";
+import { DataProvider } from "@pankod/refine-strapi-v4";
 interface IProduct {
   id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  products: object;
+  name: string;
+  username: string;
 }
 
 type ItemProp = {
-  products: GetListResponse<IProduct>;
+  users: GetListResponse<IProduct>;
 };
 
-const ProductList: React.FC<ItemProp> = ({ products }) => {
+const ProductList: React.FC<ItemProp> = ({ users }) => {
   const { tableQueryResult } = useTable<IProduct>({
-    resource: "products",
+    resource: "users",
     queryOptions: {
-      initialData: products,
+      initialData: users,
     },
   });
 
@@ -34,13 +30,9 @@ const ProductList: React.FC<ItemProp> = ({ products }) => {
 
           return (
             <ProductCards
-              products={product}
-              key={product.id}
-              title={product.title}
-              category={product.category}
-              description={product.description}
-              cardImage={product.image}
-              price={product.price}
+              id={product.id}
+              name={product.name}
+              username={product.username}
             />
           );
         })}
@@ -52,13 +44,13 @@ const ProductList: React.FC<ItemProp> = ({ products }) => {
 export default ProductList;
 
 export const getStaticProps: GetServerSideProps = async context => {
-  const data = await dataProvider("https://fakestoreapi.com").getList<IProduct>(
-    {
-      resource: "products",
-    }
-  );
+  const data = await DataProvider(
+    "https://jsonplaceholder.typicode.com"
+  ).getList<IProduct>({
+    resource: "users",
+  });
 
   return {
-    props: { products: data },
+    props: { users: data },
   };
 };
