@@ -14,7 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </Link>
         <Link
           href="/cart"
-          className="outline outline-[#D6D58E] outline-offset-2 py-2 px-8 bg-[#042940] w-fit text-white rounded mt-2 mb-2"
+          className="w-32 h-12 bg-blue-600 text-blue-100  hover:bg-blue-100 hover:text-blue-600 transition-all  rounded mt-2 mb-2 flex items-center justify-center gap-x-4 text-xl"
         >
           Cart
           <p>{value.length}</p>

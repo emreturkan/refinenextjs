@@ -29,7 +29,7 @@ const Carts = () => {
               {item.username}
             </p>
             <div className="flex justify-between">
-              <p className="outline outline-[#D6D58E] outline-offset-2 p-1 bg-[#042940] w-fit text-white rounded mt-2 mb-2">
+              <p className=" w-12 h-8 flex items-center justify-center bg-gray-800 text-gray-200   rounded mt-2 mb-2">
                 $720
               </p>
             </div>

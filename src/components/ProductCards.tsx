@@ -23,13 +23,13 @@ const ProductCards: React.FC<Props> = ({ name, username, id }) => {
       </div>
       <div className="px-4">
         <p className="text-lg text-black font-semibold mb-1">{name}</p>
-        <div className="flex justify-between">
-          <p className="outline outline-[#D6D58E] outline-offset-2 p-1 bg-[#042940] w-fit text-white rounded mt-2 mb-2">
+        <div className="flex items-center justify-between">
+          <p className=" w-8 h-8 bg-[#042940]  text-white rounded mt-2 mb-2 flex items-center justify-center">
             20
           </p>
           <button
             onClick={() => addToCart({ id, name, username })}
-            className="outline outline-[#D6D58E] outline-offset-2 p-1 bg-[#042940] w-fit text-white rounded mt-2 mb-2"
+            className=" w-24 h-10 bg-blue-600 text-blue-100  hover:bg-blue-100 hover:text-blue-600 transition-all rounded mt-2 mb-2"
           >
             Add to cart
           </button>
