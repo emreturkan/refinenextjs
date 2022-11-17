@@ -4,7 +4,7 @@ import Carts from "@components/Cart";
 const ProductList = () => {
   return (
     <LayoutWrapper>
-      <div className="flex items-center justify-center px-24 my-8">
+      <div className="flex items-center my-8">
         <Carts />
       </div>
     </LayoutWrapper>

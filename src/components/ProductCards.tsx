@@ -17,7 +17,7 @@ const ProductCards: React.FC<Props> = ({ name, username, id }) => {
   };
 
   return (
-    <div className=" mr-4 pb-2 outline outline-[#042940] relative">
+    <div className=" md:mr-4 pb-2 outline outline-[#042940] relative">
       <div className="bg-[#fff] flex justify-center items-center py-4 relative">
         <p>{username}</p>
       </div>

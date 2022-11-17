@@ -19,8 +19,8 @@ const Carts = () => {
 
   if (items.length < 1) {
     return (
-      <div className="flex flex-col items-center justify-center">
-        <div className="px-24 py-6 rounded-md shadow-md mb-6 text-white bg-gray-800">
+      <div className="flex flex-col items-center justify-center mx-auto ">
+        <div className=" px-4 py-6 rounded-md shadow-md mb-6 text-white bg-gray-800">
           <h1>You do not have a product on the card.</h1>
         </div>
         <Link href="/">
@@ -34,13 +34,13 @@ const Carts = () => {
 
   if (items.length >= 1) {
     return (
-      <div className="grid grid-col-1 px-48 ">
+      <div className="flex flex-col mx-auto ">
         {items.map(item => (
           <div
-            className="md:w-[720px] pb-2 outline outline-[#042940] relative mb-8 flex items-center "
+            className=" mx-4 px-4 md:w-[720px] pb-2 outline outline-[#042940] relative mb-8 flex items-center "
             key={item.name}
           >
-            <div className="px-4 flex-1">
+            <div className=" flex-1">
               <p className="text-lg text-black font-semibold mb-1">
                 {item.name}
               </p>
@@ -78,7 +78,7 @@ const Carts = () => {
             </div>
           </div>
         ))}
-        <div className="flex flex-col justify-end items-end  ">
+        <div className="flex flex-col justify-end items-end mx-2 ">
           <div className="w-96 h-12 mb-4 bg-gray-800 rounded-md  flex items-center justify-around text-white shadow-md">
             <h1 className="text-xl ">Total Amount:</h1>
             <h1 className="text-xl font-bold">$720</h1>
